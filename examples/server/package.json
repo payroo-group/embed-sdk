@@ -1,0 +1,21 @@
+{
+  "name": "backend",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "start": "node --experimental-strip-types index.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@fastify/cors": "^11.0.1",
+    "fastify": "^5.4.0",
+    "fastify-cors": "^6.1.0"
+  }
+}

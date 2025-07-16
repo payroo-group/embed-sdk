@@ -1,0 +1,13 @@
+{
+  "name": "payroo-embed-sdk",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "npm run -ws build",
+    "format": "npx prettier --cache --write ."
+  },
+  "workspaces": [
+    "examples/*",
+    "packages/*"
+  ]
+}

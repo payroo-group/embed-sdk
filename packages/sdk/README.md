@@ -1,6 +1,4 @@
-# Payroo Components Embed
-
-JavaScript and React libraries for embedding Payroo payroll components into your web applications.
+# Payroo Embed JavaSript SDK
 
 ## Installation
 
@@ -8,12 +6,6 @@ JavaScript and React libraries for embedding Payroo payroll components into your
 
 ```bash
 npm install @payroo/embed-sdk
-```
-
-### React SDK
-
-```bash
-npm install @payroo/embed-sdk-react
 ```
 
 ## Usage
@@ -71,43 +63,6 @@ When using the `autoHeightAdjust` option, the embed will automatically adjust it
 This is useful for components that may have dynamic content or varying heights.
 For this to work, the container element should have the style `overflow-y: auto` applied to it.
 
-## React SDK Usage
-
-The React SDK provides a more convenient way to embed payroll components in React applications.
-
-Components are available for various payroll functionalities, such as payrun history, payslips, and more.
-React components automatically handle the embed lifecycle and event handling specific to the component.
-You can customize the behavior and appearance of the components using props.
-
-Component embed URL is typically fetched from your server-side code, similar to the JavaScript SDK.
-You can use the `getEmbedUrl` function prop to provide the URL for the component.
-
-This is useful when you want to fetch the URL dynamically or when the URL is generated based on user actions.
-Simply pass a function that returns the embed URL to the component.
-
-```tsx
-import { PayrunList } from "@payroo-group/embed-sdk-react";
-
-const url = "https://embed.payroo.com.au/component/payrun-history...";
-
-const App = () => {
-  return (
-    <div>
-      <h1>Payrun History</h1>
-      <PayrunList
-        getEmbedUrl={() => url}
-        showFilter
-        showCreateButton
-        onClickPayrun={(payrun) => {
-          console.log("Payrun clicked:", payrun);
-          window.location.href = `/payrun/${payrun.id}`;
-        }}
-      />
-    </div>
-  );
-};
-
-````
 
 ## Example Applications
 
@@ -117,30 +72,13 @@ You can find example applications demonstrating the usage of the Payroo embed co
 2. [React Example](./examples/react-app/README.md) - A React application demonstrating the
 3. [JavaScript Example](./examples/vanilla-app/README.md) - A JavaScript application demonstrating the usage of the embed components.
 
-### Running the Examples
 
-To run the example applications, follow these steps:
+## Development
 
-1. Clone the repository:
-   ```bash
-   git clone
-   ```
-2. Install the dependencies:
-   ```bash
-    npm install
-    ```
-3. Navigate to the example directory you want to run:
-   ```bash
-    cd examples/server
-    ```
-4. Start the server:
-    ```bash
-    npm run start
-    ```
-5. Start the client application:
-   ```bash
-   cd examples/react-app
-   npm run dev
-   ```
-6. Open your browser and navigate to `http://localhost:5173` to see the example in action.
+**Install Dependencies**
+
+```bash
+npm install
+```
+
 

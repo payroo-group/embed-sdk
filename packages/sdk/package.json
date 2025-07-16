@@ -1,0 +1,32 @@
+{
+  "name": "@payroo-group/embed-sdk",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.cts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": "git://github.com/payroo-group/embed-sdk.git",
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5",
+    "tsdown": "^0.12.9"
+  },
+  "dependencies": {
+    "eventemitter3": "^5.0.1"
+  }
+}

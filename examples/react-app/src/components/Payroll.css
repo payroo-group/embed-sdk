@@ -1,0 +1,77 @@
+.description {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.payroll-container .description {
+  margin-bottom: 0px;
+}
+
+.payroll-container h1 {
+  margin: 0px;
+}
+
+.action-container {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  max-width: 900px;
+  margin: 0px auto 20px;
+  padding: 0 20px 40px;
+  text-align: center;
+  flex: auto;
+}
+
+.action-container h1 {
+  margin-bottom: 30px;
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.action-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition:
+    background 0.2s,
+    box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.action-card:hover {
+  background: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.action-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-box {
+  background: #fce9e9;
+  color: #c00;
+  font-size: 20px;
+  border-radius: 6px;
+  padding: 8px;
+  height: 44px;
+}
+
+.action-title {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.arrow {
+  font-size: 20px;
+  color: #c00;
+}

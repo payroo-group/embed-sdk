@@ -1,0 +1,81 @@
+.settings-page {
+  width: 100%;
+  max-width: 775px;
+  margin: 0 auto;
+}
+
+.description {
+  margin-bottom: 30px;
+  color: black;
+  font-size: 14px;
+}
+
+.description a {
+  color: #c10202;
+  text-decoration: underline;
+}
+
+.settings-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+.settings-item {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.settings-item:hover {
+  background: #f9f9f9;
+}
+
+.items {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 5px;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 18px;
+  background-color: #fbf0f1;
+  border-radius: 6px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.settings-section {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.card-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 20px;
+  gap: 8px;
+}
+
+p {
+  text-align: start;
+  margin: 0px;
+  font-size: 12px;
+}
+
+h4 {
+  margin: 0px;
+  font-size: 14px;
+}

@@ -1,0 +1,16 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: var(--font-size);
+  gap: var(--gap-medium);
+  color: var(--text-color);
+  padding: var(--gap-large);
+  margin-top: var(--gap-large);
+  border-top: 1px solid var(--border-color);
+}
+
+.footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
