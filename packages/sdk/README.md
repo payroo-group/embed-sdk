@@ -10,8 +10,7 @@ npm install @payroo/embed-sdk
 
 ## Usage
 
-To embed a payroll component, you are first required to create an embed session and a signed component URL.
-This can be done using the Payroo API.
+To embed a payroll component, you must first create an embed session and a signed component URL using the Payroo API.
 
 ### Step 1: Create an Embed URL
 
@@ -20,7 +19,7 @@ _Note: an API key is required to access the Payroo embed API._
 
 You can find an example of the server implementation in the [examples/server](./examples/server) directory.
 
-React [API Documentation](https://docs.payroo.com.au/payroo-api#tag/embeds)
+Read [API Documentation](https://docs.payroo.com.au/payroo-api#tag/embeds)
 
 ### Step 2: Embed the Component
 

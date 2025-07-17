@@ -1,6 +1,6 @@
 # Payroo Components Embed
 
-JavaScript and React libraries for embedding Payroo payroll components into your web applications.
+Easily embed Payroo payroll components into your web applications using our JavaScript and React SDKs.
 
 ## Installation
 
@@ -18,34 +18,32 @@ npm install @payroo/embed-sdk-react
 
 ## Usage
 
-To embed a payroll component, you are first required to create an embed session and a signed component URL.
-This can be done using the Payroo API.
+To embed a payroll component, you must first create an embed session and a signed component URL using the Payroo API.
 
 ### Step 1: Create an Embed URL
 
-You'd typically do this on your server-side code.
-_Note: an API key is required to access the Payroo embed API._
+This step should be performed on your server.  
+_Note: An API key is required to access the Payroo embed API._
 
-You can find an example of the server implementation in the [examples/server](./examples/server) directory.
+See a server implementation example in [examples/server](./examples/server).
 
-React [API Documentation](https://docs.payroo.com.au/payroo-api#tag/embeds)
+For detailed API documentation, visit the [Payroo API Docs](https://docs.payroo.com.au/payroo-api#tag/embeds).
 
-### Step 2: Embed the Component
+### Step 2: Embed the Component (JavaScript/TypeScript)
 
 ```ts
-
 import { Embed, Events } from "@payroo-group/embed-sdk";
 
-// Embed URL that you received from the server
+// Embed URL received from your server
 const url = "https://embed.payroo.com.au/component/...";
 
 // The HTML element where the embed will be rendered
-const container = window.document.getElementById("payrun-history");
+const container = document.getElementById("payrun-history");
 
 // Create an embed instance
 const embed = new Embed(url, options);
 
-// Render the embed component onto the container element
+// Render the embed component
 embed.mount(container);
 
 // Listen for events
@@ -57,90 +55,80 @@ embed.on(Events.COMPONENT_READY, () => {
 embed.unmount();
 ```
 
-#### Options 
+#### Options
 
-| Name | Usage | Default |
-| --------------- | --------------- | --------------- |
-| extraAllowedOrigins | In case embed URL is from a different origin, you can the origin in this options. Example: ["https://sandbox-embed.payroo.com.au"]| ["https://embed.payroo.com.au"] |
-| autoHeightAdjust | Adjusts the height of the embed automatically based on the content inside | true |
+| Name                | Description                                                                                       | Default                              |
+|---------------------|---------------------------------------------------------------------------------------------------|--------------------------------------|
+| extraAllowedOrigins | Additional allowed origins for the embed URL. Example: `["https://sandbox-embed.payroo.com.au"]` | `["https://embed.payroo.com.au"]`    |
+| autoHeightAdjust    | Automatically adjusts the height of the embed based on its content.                              | `true`                               |
 
-
-**Auto Height Adjustment**
-
-When using the `autoHeightAdjust` option, the embed will automatically adjust its height based on the content inside.
-This is useful for components that may have dynamic content or varying heights.
-For this to work, the container element should have the style `overflow-y: auto` applied to it.
+**Auto Height Adjustment:**  
+When `autoHeightAdjust` is enabled, the embed automatically resizes based on its content.  
+Ensure the container element has `overflow-y: auto` style applied.
 
 ## React SDK Usage
 
-The React SDK provides a more convenient way to embed payroll components in React applications.
+The React SDK provides convenient components for embedding payroll features in React apps.
 
-Components are available for various payroll functionalities, such as payrun history, payslips, and more.
-React components automatically handle the embed lifecycle and event handling specific to the component.
-You can customize the behavior and appearance of the components using props.
+- Components are available for payrun history, payslips, and more.
+- The SDK manages the embed lifecycle and event handling.
+- Customize behavior and appearance via props.
 
-Component embed URL is typically fetched from your server-side code, similar to the JavaScript SDK.
-You can use the `getEmbedUrl` function prop to provide the URL for the component.
-
-This is useful when you want to fetch the URL dynamically or when the URL is generated based on user actions.
-Simply pass a function that returns the embed URL to the component.
+Typically, the embed URL is fetched from your server.  
+Pass a function to the `getEmbedUrl` prop to provide the URL dynamically.
 
 ```tsx
 import { PayrunList } from "@payroo-group/embed-sdk-react";
 
 const url = "https://embed.payroo.com.au/component/payrun-history...";
 
-const App = () => {
-  return (
-    <div>
-      <h1>Payrun History</h1>
-      <PayrunList
-        getEmbedUrl={() => url}
-        showFilter
-        showCreateButton
-        onClickPayrun={(payrun) => {
-          console.log("Payrun clicked:", payrun);
-          window.location.href = `/payrun/${payrun.id}`;
-        }}
-      />
-    </div>
-  );
-};
-
-````
+const App = () => (
+  <div>
+    <h1>Payrun History</h1>
+    <PayrunList
+      getEmbedUrl={() => url}
+      showFilter
+      showCreateButton
+      onClickPayrun={(payrun) => {
+        console.log("Payrun clicked:", payrun);
+        window.location.href = `/payrun/${payrun.id}`;
+      }}
+    />
+  </div>
+);
+```
 
 ## Example Applications
 
-You can find example applications demonstrating the usage of the Payroo embed components in the [examples](./examples) directory.
+Find example applications in the [examples](./examples) directory:
 
-1. [Server Example](./examples/server/README.md) - A simple server implementation to create embed URLs.
-2. [React Example](./examples/react-app/README.md) - A React application demonstrating the
-3. [JavaScript Example](./examples/vanilla-app/README.md) - A JavaScript application demonstrating the usage of the embed components.
+1. [Server Example](./examples/server/README.md) – Simple server to create embed URLs.
+2. [React Example](./examples/react-app/README.md) – React app demonstrating SDK usage.
+3. [JavaScript Example](./examples/vanilla-app/README.md) – Vanilla JS app using the embed components.
 
 ### Running the Examples
 
-To run the example applications, follow these steps:
-
 1. Clone the repository:
    ```bash
-   git clone
+   git clone <repo-url>
    ```
-2. Install the dependencies:
+2. Install dependencies:
    ```bash
-    npm install
-    ```
-3. Navigate to the example directory you want to run:
+   npm install
+   ```
+3. Navigate to the example directory:
    ```bash
-    cd examples/server
-    ```
+   cd examples/server
+   ```
 4. Start the server:
-    ```bash
-    npm run start
-    ```
+   ```bash
+   npm run start
+   ```
 5. Start the client application:
    ```bash
-   cd examples/react-app
+   cd ../react-app
    npm run dev
    ```
-6. Open your browser and navigate to `http://localhost:5173` to see the example in action.
+6. Open your browser at [http://localhost:5173](http://localhost:5173) to view the example.
 
+---
