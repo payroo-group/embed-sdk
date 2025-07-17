@@ -1,6 +1,6 @@
 {
   "name": "@payroo-group/embed-sdk",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -12,14 +12,27 @@
     },
     "./package.json": "./package.json"
   },
+  "homepage": "https://github.com/payroo-group/embed-sdk#readme",
+  "bugs": {
+    "url": "https://github.com/payroo-group/embed-sdk/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/payroo-group/embed-sdk.git"
+  },
+  "author": "Shidil Eringa <shidil@payroo.com.au>",
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
+    "access": "public"
   },
-  "repository": "git://github.com/payroo-group/embed-sdk.git",
   "scripts": {
     "build": "tsdown",
-    "dev": "tsdown --watch"
+    "dev": "tsdown --watch",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
