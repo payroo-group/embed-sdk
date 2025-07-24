@@ -165,7 +165,14 @@ export type HolidaysSettingsOptions = {
 
 export type PayslipsSettingsOptions = {
   /**
-   * If true, allows editing payslip settings.
+   * If true, allows editing holiday settings.
+   */
+  allowEdit?: boolean;
+};
+
+export type ATOSettingsOptions = {
+  /**
+   * If true, allows editing ato settings.
    */
   allowEdit?: boolean;
 };
@@ -183,4 +190,5 @@ export type ComponentSchemaMap = {
   [Components.PAYROLL_SETTINGS]: PayrollSettingsOptions;
   [Components.HOLIDAYS_SETTINGS]: HolidaysSettingsOptions;
   [Components.PAYSLIPS_SETTINGS]: PayslipsSettingsOptions;
+  [Components.ATO_SETTINGS]: ATOSettingsOptions;
 };
