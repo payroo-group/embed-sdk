@@ -31,7 +31,7 @@ function Employees() {
               options={{
                 autoHeightAdjust: true,
                 extraAllowedOrigins: [
-                  "http://localhost:5173",
+                  "http://localhost:5700",
                   "https://sandbox-embed.payroo.com.au",
                 ],
               }}

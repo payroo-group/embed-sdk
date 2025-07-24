@@ -7,7 +7,7 @@ function PayrollSettings() {
       title: "Payrun",
       description:
         "Manage employee payments, set up pay runs, and ensure everyone is paid accurately and on time.",
-      link: "/settings/payroll/payroll",
+      link: "/settings/payroll/payrun",
     },
     {
       title: "Payslips",
