@@ -11,6 +11,7 @@ export enum Components {
   PAYROLL_SETTINGS = "payroll_settings",
   HOLIDAYS_SETTINGS = "holidays_settings",
   PAYSLIPS_SETTINGS = "payslips_settings",
+  ATO_SETTINGS = "ato_settings",
 }
 
 export type ListPayrunsOptions = {
@@ -140,7 +141,7 @@ export type ViewReportOptions = {
   /**
    * The report type to view.
    */
-  reportType: string;
+  reportType: 'summary' | 'super' | 'leaves' | 'finalisations' | 'variance';
   /**
    * Optional date range for the report.
    */

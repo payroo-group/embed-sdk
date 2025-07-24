@@ -29,8 +29,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsdown",
     "dev": "tsdown --watch",
+    "build": "npm run typecheck && tsdown",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run build"
   },
