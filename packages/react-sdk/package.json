@@ -1,6 +1,6 @@
 {
   "name": "@payroo-group/embed-sdk-react",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Payroo embed components for React applications",
   "type": "module",
   "license": "MIT",
@@ -40,7 +40,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@payroo-group/embed-sdk": "^0.2.0"
+    "@payroo-group/embed-sdk": "^0.2.1"
   },
   "peerDependencies": {
     "react": "^18.0.0 || ^19.0.0",
