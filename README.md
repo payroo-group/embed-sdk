@@ -29,6 +29,41 @@ See a server implementation example in [examples/server](./examples/server).
 
 For detailed API documentation, visit the [Payroo API Docs](https://docs.payroo.com.au/payroo-api#tag/embeds).
 
+**Create Embed URL example**
+
+`embed-sdk` provides TypeScript for available components and component parameters.
+
+```ts
+import type { Components } from '@payroo-group/embed-sdk'
+
+const component = Components.VIEW_REPORT
+const params: ComponentSchemaMap[component] = {
+  reportType: "finalisations",
+}
+
+await fetch('https://embed.payroo.com.au/api/embed/create-url`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    "X-API-KEY": "<api key">,
+  },
+  body: JSON.stringify({
+    sessionId,
+    component,
+    params,
+  }),
+})
+
+// This generates a link to view finalisations report
+
+// Another example
+const component = Components.PAYRUN_LIST
+const params: ComponentSchemaMap[component] = {
+  showStatSummary: false,
+  showFilter: true,
+}
+```
+
 ### Step 2: Embed the Component (JavaScript/TypeScript)
 
 ```ts
