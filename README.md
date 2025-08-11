@@ -7,13 +7,13 @@ Easily embed Payroo payroll components into your web applications using our Java
 ### JavaScript/TypeScript SDK
 
 ```bash
-npm install @payroo/embed-sdk
+npm install @payroo-group/embed-sdk
 ```
 
 ### React SDK
 
 ```bash
-npm install @payroo/embed-sdk-react
+npm install @payroo-group/embed-sdk-react
 ```
 
 ## Usage
