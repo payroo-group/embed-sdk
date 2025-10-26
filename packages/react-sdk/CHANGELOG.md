@@ -1,5 +1,11 @@
 # @payroo-group/embed-sdk-react
 
+## 0.2.4
+
+### Patch Changes
+
+- [`eb56540`](https://github.com/payroo-group/embed-sdk/commit/eb56540ce0ed7d838d13f88794d60d995d950d1a) Thanks [@agrimakp](https://github.com/agrimakp)! - feat(react-sdk): added more supported components to react-sdk
+
 ## 0.2.3
 
 ### Patch Changes

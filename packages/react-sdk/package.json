@@ -1,6 +1,6 @@
 {
   "name": "@payroo-group/embed-sdk-react",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Payroo embed components for React applications",
   "type": "module",
   "license": "MIT",
