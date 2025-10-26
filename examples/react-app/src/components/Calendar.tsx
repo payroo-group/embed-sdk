@@ -19,7 +19,7 @@ function Calendar() {
       </div>
 
       <TeamCalendar
-        month="2025-10"
+        month="2025-07"
         allowMonthChange={true}
         showTeamLeaves={true}
         showHolidays={true}
