@@ -1,18 +1,13 @@
-import { EmbedContainer } from "@payroo-group/embed-sdk-react";
-import { Suspense, useMemo } from "react";
-import { Await, Link } from "react-router";
-import { Components } from "@payroo-group/embed-sdk";
+import { TeamCalendar } from "@payroo-group/embed-sdk-react";
+import { Link } from "react-router";
 import { getEmbedUrl } from "../embed";
 
 function Calendar() {
-  const url = useMemo(() => {
-    return getEmbedUrl(Components.TEAM_CALENDAR);
-  }, []);
   return (
-    <div className="container">
+    <div className="container" style={{ maxWidth: 1500 }}>
       <div className="section-head">
         <Link
-          to="/payroll"
+          to="/payruns"
           style={{
             transform: "rotate(180deg)",
             display: "block",
@@ -22,23 +17,24 @@ function Calendar() {
         </Link>
         <h2>Calendar</h2>
       </div>
-      <Suspense fallback={<div className="embed-loading">Loading...</div>}>
-        <Await resolve={url}>
-          {(url) => (
-            <EmbedContainer
-              url={url}
-              id="team-calendar"
-              options={{
-                autoHeightAdjust: true,
-                extraAllowedOrigins: [
-                  "http://localhost:5700",
-                  "https://sandbox-embed.payroo.com.au",
-                ],
-              }}
-            />
-          )}
-        </Await>
-      </Suspense>
+
+      <TeamCalendar
+        month="2025-07"
+        allowMonthChange={true}
+        showTeamLeaves={true}
+        showHolidays={true}
+        showFilter={true}
+        showSearch={true}
+        getEmbedUrl={getEmbedUrl}
+        options={{
+          autoHeightAdjust: true,
+          extraAllowedOrigins: [
+            "http://localhost:5700",
+            "https://sandbox-embed.payroo.com.au",
+          ],
+        }}
+      />
+
     </div>
   );
 }
