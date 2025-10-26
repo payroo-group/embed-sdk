@@ -1,5 +1,14 @@
 # @payroo-group/embed-sdk-react
 
+## 0.2.3
+
+### Patch Changes
+
+- [`aae2bff`](https://github.com/payroo-group/embed-sdk/commit/aae2bffb7c4c9e81c59463f5d0db8b271bee2f9d) Thanks [@agrimakp](https://github.com/agrimakp)! - feat: support for embedding calendar components
+
+- Updated dependencies [[`aae2bff`](https://github.com/payroo-group/embed-sdk/commit/aae2bffb7c4c9e81c59463f5d0db8b271bee2f9d)]:
+  - @payroo-group/embed-sdk@0.2.3
+
 ## 0.2.2
 
 ### Patch Changes
