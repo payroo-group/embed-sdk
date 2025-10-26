@@ -14,6 +14,11 @@ import PayrunSettings from "./components/Settings/PayrunSettings.tsx";
 import ATOSettings from "./components/Settings/ATOSettings.tsx";
 import HolidaySettings from "./components/Settings/HolidaySettings.tsx";
 import PayslipSettings from "./components/Settings/PayslipSettings.tsx";
+import PayrollSummary from "./components/Reports/PayrollSummary.tsx";
+import PayrollVariance from "./components/Reports/PayrollVariance.tsx";
+import Finalizations from "./components/Reports/Finalizations.tsx";
+import LeaveBalances from "./components/Reports/LeaveBalances.tsx";
+import SuperContributions from "./components/Reports/SuperContributions.tsx";
 
 const root = document.getElementById("root");
 
@@ -34,6 +39,11 @@ ReactDOM.createRoot(root as any).render(
           <Route path="/settings/payroll/ato" element={<ATOSettings />} />
           <Route path="/settings/payroll/payslips" element={<PayslipSettings />} />
           <Route path="/settings/payroll/holidays" element={<HolidaySettings />} />
+          <Route path="/reports/summary" element={<PayrollSummary />} />
+          <Route path="/reports/variance" element={<PayrollVariance />} />
+          <Route path="/reports/finalisations" element={<Finalizations />} />
+          <Route path="/reports/leaves" element={<LeaveBalances />} />
+          <Route path="/reports/super" element={<SuperContributions />} />
         </Route>
       </Routes>
     </BrowserRouter>
