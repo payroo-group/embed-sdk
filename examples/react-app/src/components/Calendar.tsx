@@ -4,7 +4,7 @@ import { getEmbedUrl } from "../embed";
 
 function Calendar() {
   return (
-    <div className="container">
+    <div className="container" style={{ maxWidth: 1500 }}>
       <div className="section-head">
         <Link
           to="/payruns"
