@@ -13,6 +13,11 @@ const navItems = [
     isActive: (pathname: string) => pathname.startsWith("/employees"),
   },
   {
+    label: "Calendar",
+    to: "/calendar",
+    isActive: (pathname: string) => pathname.startsWith("/calendar"),
+  },
+  {
     label: "Settings",
     to: "/settings",
     isActive: (pathname: string) => pathname.startsWith("/settings"),
