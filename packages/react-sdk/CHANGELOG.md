@@ -1,5 +1,12 @@
 # @payroo-group/embed-sdk-react
 
+## 0.2.5
+
+### Patch Changes
+
+- Updated dependencies [3141342]
+  - @payroo-group/embed-sdk@0.2.4
+
 ## 0.2.4
 
 ### Patch Changes

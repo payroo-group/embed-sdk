@@ -1,5 +1,11 @@
 # @payroo-group/embed-sdk
 
+## 0.2.4
+
+### Patch Changes
+
+- 3141342: feat(sdk): support new timesheets and payment components"
+
 ## 0.2.3
 
 ### Patch Changes

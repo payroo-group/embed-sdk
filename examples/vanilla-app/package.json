@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@payroo-group/embed-sdk": "^0.2.3"
+    "@payroo-group/embed-sdk": "^0.2.4"
   },
   "devDependencies": {
     "typescript": "^5",
