@@ -14,6 +14,11 @@ export enum Components {
   ATO_SETTINGS = "ato_settings",
   TEAM_CALENDAR = "team_calendar",
   EMPLOYEE_CALENDAR = "employee_calendar",
+  PAYMENT_LIST = "list_payments",
+  VIEW_PAYMENT = "view_payment",
+  TIMESHEET_LIST = "list_timesheets",
+  TIMESHEET_REQUESTS = "list_timesheet_requests",
+  VIEW_TIMESHEET = "view_timesheet",
 }
 
 export type ListPayrunsOptions = {
@@ -216,6 +221,41 @@ export type EmployeeCalendarOptions = {
   showLeaves?: boolean;
 };
 
+export type ListTimesheetsOptions = {
+  /**
+   * If true, shows a filter bar for timesheets.
+   */
+  showFilter?: boolean;
+};
+
+export type ViewTimesheetOptions = {
+  /**
+   * The unique identifier of the timesheet to view.
+   */
+  id: string;
+};
+
+export type ListTimesheetRequestsOptions = {
+  /**
+   * If true, shows a filter bar for timesheet requests.
+   */
+  showFilter?: boolean;
+};
+
+export type ListPaymentsOptions = {
+  /**
+   * If true, shows a filter bar for payments.
+   */
+  showFilter?: boolean;
+};
+
+export type ViewPaymentOptions = {
+  /**
+   * The unique identifier of the payment to view.
+   */
+  id: string;
+};
+
 export type ComponentSchemaMap = {
   [Components.PAYRUN_LIST]: ListPayrunsOptions;
   [Components.VIEW_PAYRUN]: ViewPayrunOptions;
@@ -232,4 +272,9 @@ export type ComponentSchemaMap = {
   [Components.ATO_SETTINGS]: ATOSettingsOptions;
   [Components.TEAM_CALENDAR]: TeamCalendarOptions;
   [Components.EMPLOYEE_CALENDAR]: EmployeeCalendarOptions;
+  [Components.TIMESHEET_LIST]: ListTimesheetsOptions;
+  [Components.VIEW_TIMESHEET]: ViewTimesheetOptions;
+  [Components.TIMESHEET_REQUESTS]: ListTimesheetRequestsOptions;
+  [Components.PAYMENT_LIST]: ListPaymentsOptions;
+  [Components.VIEW_PAYMENT]: ViewPaymentOptions;
 };
