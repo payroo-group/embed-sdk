@@ -1,11 +1,12 @@
-import { Embed, type Options } from '@payroo-group/embed-sdk'
+import { Embed, Events, type EventSchemaMap, type Options } from '@payroo-group/embed-sdk'
 import React from 'react'
 
 interface EmbedContainerProps {
   id: string
   url: string
   options?: Options
-  className?: string
+  className?: string,
+  onEvent?: <K extends Events>(event: K, data: EventSchemaMap[K]) => void
 }
 
 export const EmbedContainer: React.FC<EmbedContainerProps> = ({
@@ -13,6 +14,7 @@ export const EmbedContainer: React.FC<EmbedContainerProps> = ({
   url,
   options,
   className,
+  onEvent,
 }) => {
   const frameRef = React.useRef<null | HTMLDivElement>(null)
   const embedRef = React.useRef<null | Embed>(null)
@@ -30,14 +32,24 @@ export const EmbedContainer: React.FC<EmbedContainerProps> = ({
       embedRef.current.mount(frameRef.current)
     }
 
+    if (onEvent) {
+      // Listen for all events and call the onEvent callback
+      Object.values(Events).forEach((event) => {
+        embedRef.current?.on(event, (data) => {
+          onEvent(event, data)
+        })
+      })
+    }
+
     // When the component is unloaded, call the teardown function which will
     // automatically remove the event listeners we bound in the code above
     return () => {
       console.log('Unmounting embed frame')
+      // Unmount also removes all event listeners
       embedRef.current?.unmount()
       embedRef.current = null
     }
-  }, [url])
+  }, [url, options, onEvent])
 
   return (
     <div

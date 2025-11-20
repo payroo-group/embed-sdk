@@ -1,19 +1,22 @@
-import React, { useEffect } from 'react'
-import { Components, } from '@payroo-group/embed-sdk'
+import React, { useCallback, useEffect } from 'react'
+import { Components, Events, type CreateEmployeeOptions, type EventSchemaMap, } from '@payroo-group/embed-sdk'
 import { EmbedContainer } from './EmbedContainer'
 import type { ComponentProps } from './types'
 
-interface CreateEmployeeProps extends ComponentProps<Components.CREATE_EMPLOYEE> { }
+interface CreateEmployeeProps extends ComponentProps<Components.CREATE_EMPLOYEE> {
+  onSuccess?: (data: EventSchemaMap[Events.EMPLOYEE_CREATED]) => void
+}
 
 export const CreateEmployee: React.FC<CreateEmployeeProps> = ({
   getEmbedUrl,
   options,
+  onSuccess,
   ...params
 }) => {
   const [url, setUrl] = React.useState<string | null>(null)
 
   useEffect(() => {
-    getEmbedUrl(Components.CREATE_EMPLOYEE, params)
+    getEmbedUrl(Components.CREATE_EMPLOYEE, params as CreateEmployeeOptions)
       .then((embedUrl) => {
         setUrl(embedUrl)
       })
@@ -23,6 +26,18 @@ export const CreateEmployee: React.FC<CreateEmployeeProps> = ({
       })
   }, [getEmbedUrl])
 
+  const handleEvent = useCallback(<T extends Events>(event: T, data: EventSchemaMap[T]) => {
+    switch (event) {
+      case Events.EMPLOYEE_CREATED:
+        if (onSuccess) {
+          onSuccess(data as EventSchemaMap[Events.EMPLOYEE_CREATED])
+        }
+        break
+      default:
+        break
+    }
+  }, [onSuccess])
+
   return (
     <>
       {url ? (
@@ -31,6 +46,7 @@ export const CreateEmployee: React.FC<CreateEmployeeProps> = ({
           options={options}
           className="embed-container"
           id="payroo-embed-create-employee"
+          onEvent={handleEvent}
         />
       ) : (
         <div className="loading">Loading...</div>
