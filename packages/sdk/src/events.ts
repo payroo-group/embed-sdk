@@ -22,3 +22,4 @@ export enum Events {
   // Report events
   REPORT_GENERATED = "report.generated",
 }
+

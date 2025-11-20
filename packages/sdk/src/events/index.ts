@@ -41,3 +41,4 @@ export type EventSchemaMap = {
 
   [Events.REPORT_GENERATED]: ReportGeneratedEventData;
 };
+

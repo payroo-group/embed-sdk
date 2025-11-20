@@ -97,10 +97,6 @@ export type FilePayrunOptions = {
 };
 
 export type CreatePayrunOptions = {
-  /**
-   * Callback when a payrun is successfully created.
-   */
-  onSuccess?: (payrunId: string) => void;
 };
 
 export type EmployeeListOptions = {
@@ -122,10 +118,6 @@ export type ViewEmployeeOptions = {
 };
 
 export type CreateEmployeeOptions = {
-  /**
-   * Callback when an employee is successfully created.
-   */
-  onSuccess?: (employeeId: string) => void;
 };
 
 export type OnboardEmployeeOptions = {
