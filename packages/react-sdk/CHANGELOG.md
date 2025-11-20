@@ -1,5 +1,13 @@
 # @payroo-group/embed-sdk-react
 
+## 0.2.6
+
+### Patch Changes
+
+- 19e0daa: feat(react-sdk): added support for event subscriptions"
+- Updated dependencies [19e0daa]
+  - @payroo-group/embed-sdk@0.2.5
+
 ## 0.2.5
 
 ### Patch Changes

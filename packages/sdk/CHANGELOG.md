@@ -1,5 +1,11 @@
 # @payroo-group/embed-sdk
 
+## 0.2.5
+
+### Patch Changes
+
+- 19e0daa: fix(sdk): removed unsupported component options"
+
 ## 0.2.4
 
 ### Patch Changes
