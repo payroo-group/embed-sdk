@@ -24,6 +24,7 @@ export interface CreateEmbedSessionRequest {
     name: string;
     email: string;
   };
+  allowOrigin?: string;
 }
 
 export async function createEmbedSession(

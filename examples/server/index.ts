@@ -24,10 +24,11 @@ app.post("/api/create-embed-url", async function(request, reply) {
         name: "X PTY.LTD.",
       },
       user: {
-        id: "f0c8d2b-8cae-4cbe-ba00-1103a275e1a8",
+        id: "b99a803d-7bfe-4111-ac03-a71b15f77c9f",
         name: "Jon Doe",
         email: "jon@example.com",
       },
+      allowOrigin: request.headers.origin as string,
     });
     sessionId = session.id;
   }

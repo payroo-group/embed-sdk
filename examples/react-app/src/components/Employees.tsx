@@ -1,4 +1,4 @@
-import { EmployeeList } from "@payroo-group/embed-sdk-react";
+import { CreateEmployee, EmployeeList } from "@payroo-group/embed-sdk-react";
 import { Link } from "react-router";
 import { getEmbedUrl } from "../embed";
 
@@ -33,6 +33,20 @@ function Employees() {
             "http://localhost:5700",
             "https://sandbox-embed.payroo.com.au",
           ],
+        }}
+      />
+
+      <CreateEmployee
+        getEmbedUrl={getEmbedUrl}
+        options={{
+          autoHeightAdjust: true,
+          extraAllowedOrigins: [
+            "http://localhost:5700",
+            "https://sandbox-embed.payroo.com.au",
+          ],
+        }}
+        onSuccess={({ employeeId }) => {
+          alert(`Employee created successfully! ID: ${employeeId}`);
         }}
       />
     </div>
